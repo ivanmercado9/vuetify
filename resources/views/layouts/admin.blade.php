@@ -33,9 +33,14 @@
 
             <v-navigation-drawer
                     v-model="drawer"
+                    dark
                     app
                     clipped
+                    src="{{ asset('img/nav-bg.jpg') }}"
                     left>
+                    <div class="text-center">
+                        <img src="img/sss-logo.png" alt="TripleS" style="height:100px;margin-top:20px;">
+                    </div>
                 <v-list dense>
                     @foreach($nav as $n)
                         @if($n->navType==\App\Components\Core\Menu\MenuItem::$NAV_TYPE_NAV && $n->visible)
@@ -66,13 +71,14 @@
                 </v-list>
             </v-navigation-drawer>
 
-            <v-app-bar app clipped-left>
+            <v-app-bar app clipped-left elevation="1">
                 <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-                <v-toolbar-title>{{config('app.name')}}</v-toolbar-title>
+                {{-- <v-toolbar-title>{{config('app.name')}}</v-toolbar-title> --}}
+                <v-toolbar-title><img src="img/triple-s-vida-logo.png" alt="TripleS - Vida" style="height: 42px; padding-top:10px"></v-toolbar-title>
             </v-app-bar>
 
             <v-content>
-                <div>
+                {{-- <div>
                     <v-breadcrumbs>
                         <v-icon slot="divider">chevron_right</v-icon>
                         <v-breadcrumbs-item
@@ -84,7 +90,7 @@
                             @{{ item.label }}
                         </v-breadcrumbs-item>
                     </v-breadcrumbs>
-                </div>
+                </div> --}}
                 <v-divider></v-divider>
                 <transition name="fade">
                     <router-view></router-view>
@@ -96,9 +102,9 @@
         </v-app>
 
         <!-- loader -->
-        <div v-if="showLoader" class="wask_loader bg_half_transparent">
+        {{-- <div v-if="showLoader" class="wask_loader bg_half_transparent">
             <moon-loader color="red"></moon-loader>
-        </div>
+        </div> --}}
 
         <!-- snackbar -->
         <v-snackbar

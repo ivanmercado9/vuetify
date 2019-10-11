@@ -52,7 +52,7 @@ Vue.use(eventBus);
 const admin = new Vue({
     vuetify: new Vuetify({
         theme: {
-            dark: true,
+            dark: false,
             themes: {
                 dark: {
                     primary: '#3f51b5',

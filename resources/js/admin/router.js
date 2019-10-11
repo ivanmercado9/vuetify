@@ -13,7 +13,7 @@ const router = new Router({
         {
             name: 'dashboard',
             path: '/dashboard',
-            component: require('./dashboard/Home'),
+            component: require('./members/Home'),
         },
         {
             path: '/users',
