@@ -13,7 +13,12 @@ const router = new Router({
         {
             name: 'dashboard',
             path: '/dashboard',
-            component: require('./members/Home'),
+            component: require('./dashboard/Home'),
+        },
+        {
+            name: 'attending',
+            path: '/attending',
+            component: require('./attending/Attending'),
         },
         {
             path: '/users',

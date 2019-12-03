@@ -31,16 +31,34 @@
     <template>
         <v-app id="inspire">
 
-            <v-navigation-drawer
-                    v-model="drawer"
-                    dark
-                    app
-                    clipped
-                    src="{{ asset('img/nav-bg.jpg') }}"
-                    left>
-                    <div class="text-center">
-                        <img src="img/sss-logo.png" alt="TripleS" style="height:100px;margin-top:20px;">
-                    </div>
+            <v-navigation-drawer v-model="drawer" dark app clipped style="background-color:#363636" left>
+                <v-list>
+                    <v-list-group no-action >
+                      <template v-slot:activator>
+                        <v-list-item-content class="text-center">
+                          <v-list-item-title>DASHBOARD</v-list-item-title>
+                        </v-list-item-content>
+                      </template>
+              
+                      <v-list-item @click="">
+                        <v-list-item-content>
+                          <v-list-item-title>CARDLOCKED</v-list-item-title>
+                        </v-list-item-content>
+                      </v-list-item>
+                      
+                      <v-list-item :to="{name: 'attending'}" :exact="false">
+                        <v-list-item-content>
+                          <v-list-item-title>RECEPTIONIST</v-list-item-title>
+                        </v-list-item-content>
+                      </v-list-item>
+                      <v-list-item @click="">
+                        <v-list-item-content>
+                          <v-list-item-title>LETTERS & FORMS</v-list-item-title>
+                        </v-list-item-content>
+                      </v-list-item>
+
+                    </v-list-group>
+                </v-list>  
                 <v-list dense>
                     @foreach($nav as $n)
                         @if($n->navType==\App\Components\Core\Menu\MenuItem::$NAV_TYPE_NAV && $n->visible)
@@ -74,7 +92,8 @@
             <v-app-bar app clipped-left elevation="1">
                 <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
                 {{-- <v-toolbar-title>{{config('app.name')}}</v-toolbar-title> --}}
-                <v-toolbar-title><img src="img/triple-s-vida-logo.png" alt="TripleS - Vida" style="height: 42px; padding-top:10px"></v-toolbar-title>
+                {{-- <v-toolbar-title><img src="img/triple-s-vida-logo.png" alt="TripleS - Vida" style="height: 42px; padding-top:10px"></v-toolbar-title> --}}
+                <v-toolbar-title>zManager</v-toolbar-title>
             </v-app-bar>
 
             <v-content>
@@ -96,9 +115,6 @@
                     <router-view></router-view>
                 </transition>
             </v-content>
-            <v-footer fixed>
-                <span>&copy; 2017</span>
-            </v-footer>
         </v-app>
 
         <!-- loader -->

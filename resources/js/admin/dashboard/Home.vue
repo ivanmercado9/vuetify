@@ -1,8 +1,38 @@
 <template>
-    <div class="page_wrap_vue pa-3">
-        <h2>HOME PAGE</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias voluptatum, maiores repellendus, quia voluptas nostrum consequatur quos iste molestiae voluptates sapiente dolore voluptatibus commodi odio facere nemo sit reprehenderit incidunt.</p>
-    </div>
+  <div class="pa-5">
+    <v-alert icon="mdi-bell-outline" prominent text type="info">
+      <strong>Donec quam felis, ultricies.</strong> Sed in libero ut nibh placerat accumsan.. Curabitur blandit mollis lacus. Curabitur blandit mollis lacus.
+    </v-alert>
+    <v-row class="">
+      <v-col>
+        <v-card class="pa-3" outlined tile>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore recusandae laudantium totam magni</p>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card class="pa-3" outlined tile>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore recusandae laudantium totam magni</p>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row class="">
+      <v-col>
+        <v-card class="pa-3" outlined tile>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore recusandae laudantium totam magni</p>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card class="pa-3" outlined tile>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore recusandae laudantium totam magni</p>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card class="pa-3" outlined tile>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore recusandae laudantium totam magni</p>
+        </v-card>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
