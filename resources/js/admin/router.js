@@ -16,9 +16,14 @@ const router = new Router({
             component: require('./dashboard/Home'),
         },
         {
+            name: 'register',
+            path: '/register',
+            component: require('./frontdesk/Register'),
+        },
+        {
             name: 'attending',
             path: '/attending',
-            component: require('./attending/Attending'),
+            component: require('./frontdesk/Attending'),
         },
         {
             path: '/users',

@@ -40,22 +40,25 @@
                         </v-list-item-content>
                       </template>
               
-                      <v-list-item @click="">
-                        <v-list-item-content>
-                          <v-list-item-title>CARDLOCKED</v-list-item-title>
-                        </v-list-item-content>
-                      </v-list-item>
-                      
-                      <v-list-item :to="{name: 'attending'}" :exact="false">
-                        <v-list-item-content>
-                          <v-list-item-title>RECEPTIONIST</v-list-item-title>
-                        </v-list-item-content>
-                      </v-list-item>
-                      <v-list-item @click="">
-                        <v-list-item-content>
-                          <v-list-item-title>LETTERS & FORMS</v-list-item-title>
-                        </v-list-item-content>
-                      </v-list-item>
+                        <v-list-item @click="">
+                            {{-- <img class="mainmenu-action" src="/img/credit-card.svg" alt=""> --}}
+                            <v-list-item-content>
+                                <v-list-item-title>CARDLOCKED</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                            
+                        <v-list-item :to="{name: 'register'}" :exact="false">
+                            {{-- <img class="mainmenu-action" src="/img/file.svg" alt=""> --}}
+                            <v-list-item-content>
+                                <v-list-item-title>FRONTDESK</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <v-list-item @click="">
+                            {{-- <img class="mainmenu-action" src="/img/report.svg" alt=""> --}}
+                            <v-list-item-content>
+                            <v-list-item-title>LETTERS & FORMS</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
 
                     </v-list-group>
                 </v-list>  

@@ -4,3 +4,17 @@
     background: #2196f3;
     margin-top: -8px;
 }
+
+.v-data-table--dense td {
+    height: 32px !important;
+}
+
+.v-list .v-list-item--active, .v-list .v-list-item--active .v-icon {
+    color: #f7f7f7 !important;
+}
+
+img.mainmenu-action {
+    position: absolute;
+    left: 18px;
+    height: 26px;
+}
