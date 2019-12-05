@@ -106,7 +106,7 @@
                 clearable
                 clear-icon="mdi-close-circle-outline"
               ></v-text-field>
-              <v-checkbox v-model="caseSensitive" hide-details label="Case sensitive search"></v-checkbox>
+              <!-- <v-checkbox v-model="caseSensitive" hide-details label="Case sensitive search"></v-checkbox> -->
             </v-sheet>
             <v-card-text>
               <v-treeview
