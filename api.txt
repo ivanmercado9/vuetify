@@ -1,0 +1,3 @@
+Attendance Routes on web.php
+
+GET "/frontdesk/attendance/get" (Get all attendance tickets)

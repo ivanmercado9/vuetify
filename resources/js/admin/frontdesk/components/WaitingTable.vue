@@ -28,6 +28,8 @@
           <v-chip x-small v-if="item.status == 'waiting'" color="red" dark>Waiting</v-chip>
           <v-chip x-small v-if="item.status == 'attending'" color="amber" dark>Waiting</v-chip>
           <v-chip x-small v-if="item.status == 'attended'" color="light-green" dark>Attended</v-chip>
+          <v-chip x-small v-if="item.status == 'hold'" color="yellow" dark>On hold</v-chip>
+          <v-chip x-small v-if="item.status == 'Referred'" color="light-blue" dark>Referred</v-chip>
         </template>
         <template v-slot:item.action="{ item }">
           <v-menu bottom left>

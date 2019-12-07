@@ -61,6 +61,12 @@ class UserSeeder extends Seeder
         // create admin account
         $AdminUser = User::create([
             'name' => 'John Doe',
+            'user_name' => 'JDoe',
+            'employee_id' => 'ABC123',
+            'position' => 'Manager',
+            'department' => 'Service',
+            'branch' => 'Main',
+            'group' => 'ABC123',
             'email' => 'admin@gmail.com',
             'password' => '12345678',
             'remember_token' => str_random(10),

@@ -11,9 +11,14 @@
 |
 */
 
+
 Route::get('/','Front\\HomeController@index')->name('front.home');
 Route::get('files/{id}/preview','Front\\FileController@filePreview')->name('front.file.preview');
 Route::get('files/{id}/download','Front\\FileController@fileDownload')->name('front.file.download');
+
+//Front Desk Routes
+Route::get('/frontdesk/attendance/get','FrontdeskController@getAttendance');
+Route::get('/frontdesk/attendance/find/{id}','FrontdeskController@getAttendanceById');
 
 Auth::routes();
 
