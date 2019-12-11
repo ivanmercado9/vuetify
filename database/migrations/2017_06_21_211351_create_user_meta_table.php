@@ -16,7 +16,6 @@ class CreateUserMetaTable extends Migration
         Schema::dropIfExists('user_meta');
         Schema::create('user_meta', function(Blueprint $table)
         {
-            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('key')->index();

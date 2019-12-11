@@ -14,14 +14,12 @@ class CreateAllInitialTicketsTables extends Migration
     public function up()
     {
       Schema::create('positions', function (Blueprint $table) {
-          $table->engine = 'InnoDB';
           $table->increments('id');
           $table->string('title')->index()->unique();
           $table->text('description')->nullable();
           $table->timestamps();
       });
       Schema::create('branches', function (Blueprint $table) {
-          $table->engine = 'InnoDB';
           $table->increments('id');
           $table->string('title')->index()->unique();
           $table->text('description')->nullable();
@@ -29,14 +27,12 @@ class CreateAllInitialTicketsTables extends Migration
           $table->timestamps();
       });
       Schema::create('departments', function (Blueprint $table) {
-          $table->engine = 'InnoDB';
           $table->increments('id');
           $table->string('title')->index()->unique();
           $table->text('description')->nullable();
           $table->timestamps();
       });
       Schema::create('services', function (Blueprint $table) {
-          $table->engine = 'InnoDB';
           $table->increments('id');
           $table->string('title')->index()->unique();
           $table->text('description');
@@ -46,19 +42,16 @@ class CreateAllInitialTicketsTables extends Migration
           $table->timestamps();
       });
       Schema::create('statuses', function (Blueprint $table) {
-          $table->engine = 'InnoDB';
           $table->increments('id');
           $table->string('tickets');
       });
       Schema::create('heard_about_us', function (Blueprint $table) {
-          $table->engine = 'InnoDB';
           $table->increments('id');
           $table->string('title')->index()->unique();
           $table->text('description')->nullable();
           $table->timestamps();
       });
       Schema::create('referred_log', function (Blueprint $table) {
-          $table->engine = 'InnoDB';
           $table->increments('id');
           $table->integer('tickets_id');
           $table->dateTime('referred_time');
@@ -70,7 +63,6 @@ class CreateAllInitialTicketsTables extends Migration
           $table->dateTime('called_time')->nullable();
       });
       Schema::create('tickets', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('ticket_number')->nullable();
             $table->dateTime('registered_time');
@@ -103,7 +95,6 @@ class CreateAllInitialTicketsTables extends Migration
             $table->timestamps();
         });
         Schema::create('tickets_services', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('ticket_id')->foreign()->references('id')->on('tickets');
             $table->unsignedInteger('service_id')->foreign()->references('id')->on('services');

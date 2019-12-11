@@ -16,7 +16,6 @@ class CreateUserGroupPivotTable extends Migration {
 		Schema::dropIfExists('user_group_pivot_table');
 		Schema::create('user_group_pivot_table', function(Blueprint $table)
 		{
-			$table->engine = 'InnoDB';
 			$table->increments('id');
 			$table->unsignedInteger('user_id');
 			$table->unsignedInteger('group_id');

@@ -14,7 +14,6 @@ class CreateRepoTable extends Migration
     public function up()
     {
         Schema::create('repo', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('client_number')->nullable();
             $table->string('branch')->nullable();
