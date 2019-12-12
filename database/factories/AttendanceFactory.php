@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Attendance::class, function (Faker $faker) {
     return [
-        'ticket_number'=>$faker->unique()->randomNumber(3),
+        'turn_number'=>$faker->unique()->randomNumber(3),
         'registered_time'=>$faker->dateTime(),
         'registered_by_user'=> '1',
         'registered_by_station'=>$faker->localIpv4(),
@@ -25,10 +25,9 @@ $factory->define(App\Attendance::class, function (Faker $faker) {
         //'last_referred_to_user'=>'1',
         'express'=>$faker->boolean(20),
         'status_id'=>$faker->numberBetween(1,5),
-        'day_ticket_number'=>$faker->unique()->randomNumber(3),
         //'diff_registered_called_time'=>'',
         //'diff_called_finished_time'=>'',
         'appointment'=>$faker->boolean(10),
-        'urgency'=>$faker->numberBetween(1,3),
+        'urgency_id'=>$faker->numberBetween(1,3),
     ];
 });

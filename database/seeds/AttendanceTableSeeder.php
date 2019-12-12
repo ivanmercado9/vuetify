@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Attendance;
 
-class TicketsTableSeeder extends Seeder
+class AttendanceTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

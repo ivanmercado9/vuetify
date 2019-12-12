@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(FileGroupSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(BinsTableSeeder::class);
-        $this->call(TicketsTableSeeder::class);
+        $this->call(AttendanceTableSeeder::class);
     }
 }

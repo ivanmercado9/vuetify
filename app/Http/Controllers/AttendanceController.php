@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Attendance;
 
-class FrontdeskController extends Controller
+class AttendanceController extends Controller
 {
     public function getAttendance(){
         return Attendance::get();

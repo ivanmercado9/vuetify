@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAllInitialTicketsTables extends Migration
+class CreateAllInitialFrontDeskTables extends Migration
 {
     /**
      * Run the migrations.
@@ -43,7 +43,9 @@ class CreateAllInitialTicketsTables extends Migration
       });
       Schema::create('statuses', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('tickets');
+          $table->string('title')->index()->unique();
+          $table->text('description')->nullable();
+          $table->timestamps();
       });
       Schema::create('heard_about_us', function (Blueprint $table) {
           $table->increments('id');
@@ -61,13 +63,13 @@ class CreateAllInitialTicketsTables extends Migration
           $table->string('to_user')->foreign()->references('name')->on('users');
           $table->ipAddress('called_station')->nullable();
           $table->dateTime('called_time')->nullable();
+          $table->timestamps();
       });
-      Schema::create('tickets', function (Blueprint $table) {
+      Schema::create('attendance', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('ticket_number')->nullable();
+            $table->integer('turn_number')->nullable();  //Turn number of the day. It resets daily.
             $table->dateTime('registered_time');
             $table->integer('registered_by_user')->foreign()->references('id')->on('users');
-
             $table->ipAddress('registered_by_station')->nullable();
             $table->text('registered_by_comments')->nullable();
             $table->dateTime('called_time')->nullable();
@@ -82,24 +84,21 @@ class CreateAllInitialTicketsTables extends Migration
             $table->string('heard_about_us')->nullable();
             $table->string('heard_about_us_message')->nullable();
             $table->string('branch_id')->nullable();
-
             $table->integer('referred_to')->nullable();
             $table->integer('last_referred_to_user')->nullable();
             $table->boolean('express')->nullable();
             $table->smallInteger('status_id')->foreign()->references('id')->on('statuses');
-            $table->integer('day_ticket_number')->nullable();
             $table->decimal('diff_registered_called_time')->nullable();
             $table->decimal('diff_called_finished_time')->nullable();
             $table->boolean('appointment')->nullable();
-            $table->smallInteger('urgency')->nullable();
+            $table->smallInteger('urgency_id')->nullable();
             $table->timestamps();
         });
-        Schema::create('tickets_services', function (Blueprint $table) {
+        Schema::create('attendance_services', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('ticket_id')->foreign()->references('id')->on('tickets');
+            $table->unsignedInteger('attendance_id')->foreign()->references('id')->on('tickets');
             $table->unsignedInteger('service_id')->foreign()->references('id')->on('services');
             $table->timestamps();
-
         });
 
         Schema::create('users_info', function (Blueprint $table) {
@@ -112,6 +111,7 @@ class CreateAllInitialTicketsTables extends Migration
             $table->string('default_menu');
             $table->string('picture'); //path to user picture
             $table->string('signature'); //path to user signature
+            $table->timestamps();
         });
     }
 
@@ -129,8 +129,8 @@ class CreateAllInitialTicketsTables extends Migration
         Schema::dropIfExists('statuses');
         Schema::dropIfExists('heard_about_us');
         Schema::dropIfExists('referred_log');
-        Schema::dropIfExists('tickets');
-        Schema::dropIfExists('tickets_services');
+        Schema::dropIfExists('attendance');
+        Schema::dropIfExists('attendance_services');
         Schema::dropIfExists('users_info');
     }
 }

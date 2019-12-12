@@ -13,25 +13,32 @@ class StatusTableSeeder extends Seeder
     public function run()
     {
       DB::table('statuses')->insert([
-        'tickets' => 'Registered',
+        'title' => 'Registered',
+        'description' => 'Registered and waiting to be called',
       ]);
       DB::table('statuses')->insert([
-        'tickets' => 'Attending',
+        'title' => 'Attending',
+        'description' => 'Currently being attended',
       ]);
       DB::table('statuses')->insert([
-        'tickets' => 'Referred',
+        'title' => 'Referred',
+        'description' => 'Referred to a user and waiting to be called',
       ]);
       DB::table('statuses')->insert([
-        'tickets' => 'Completed',
+        'title' => 'Completed',
+        'description' => 'Completed or Finished',
       ]);
       DB::table('statuses')->insert([
-        'tickets' => 'Unattended',
+        'title' => 'Unattended',
+        'description' => 'Not attended. Client left.',
       ]);
       DB::table('statuses')->insert([
-        'tickets' => 'Cancelled',
+        'title' => 'Cancelled',
+        'description' => 'Not attended. Client cancelled',
       ]);
       DB::table('statuses')->insert([
-        'tickets' => 'Hold',
+        'title' => 'Hold',
+        'description' => 'On Hold and waiting to be called again by same user',
       ]);
     }
 }
