@@ -1,0 +1,12 @@
+Attendance Routes on web.php
+
+GET "/frontdesk/attendance/get" (Get all attendance records)
+GET "/frontdesk/attendance/find/" (Get 1 attendance record by given id) Parameters: {id}
+
+
+
+*****************************
+Para usar Postman con POST debes comentar las siguiente linea de app/Http/Kernel.php:
+\App\Http\Middleware\VerifyCsrfToken::class
+****************************
+

@@ -81,7 +81,7 @@ class CreateAllInitialFrontDeskTables extends Migration
             $table->ipAddress('finished_by_station')->nullable();
             $table->string('client_number')->nullable();
             $table->string('client_name')->nullable();
-            $table->string('heard_about_us')->nullable();
+            $table->smallInteger('heard_about_us_id')->foreign()->references('id')->on('heard_about_us');
             $table->string('heard_about_us_message')->nullable();
             $table->string('branch_id')->nullable();
             $table->integer('referred_to')->nullable();

@@ -1,4 +1,0 @@
-Attendance Routes on web.php
-
-GET "/frontdesk/attendance/get" (Get all attendance tickets)
-GET "/frontdesk/attendance/find/{id}" (Get 1 attendance record by given id)

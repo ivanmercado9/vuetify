@@ -16,8 +16,8 @@ Route::get('files/{id}/preview','Front\\FileController@filePreview')->name('fron
 Route::get('files/{id}/download','Front\\FileController@fileDownload')->name('front.file.download');
 
 //Front Desk Routes
-Route::get('/frontdesk/attendance/get','FrontdeskController@getAttendance');
-Route::get('/frontdesk/attendance/find/{id}','FrontdeskController@getAttendanceById');
+Route::get('/frontdesk/attendance/get','AttendanceController@getAttendance');
+Route::post('/frontdesk/attendance/find','AttendanceController@getAttendanceById');
 
 Auth::routes();
 
