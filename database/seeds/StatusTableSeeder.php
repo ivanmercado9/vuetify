@@ -21,12 +21,12 @@ class StatusTableSeeder extends Seeder
         'description' => 'Currently being attended',
       ]);
       DB::table('statuses')->insert([
-        'title' => 'Referred',
-        'description' => 'Referred to a user and waiting to be called',
-      ]);
-      DB::table('statuses')->insert([
         'title' => 'Completed',
         'description' => 'Completed or Finished',
+      ]);
+      DB::table('statuses')->insert([
+        'title' => 'Referred',
+        'description' => 'Referred to a user and waiting to be called',
       ]);
       DB::table('statuses')->insert([
         'title' => 'Unattended',

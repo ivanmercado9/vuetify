@@ -2,7 +2,9 @@ Attendance Routes on web.php
 
 GET "/frontdesk/attendance/get" (Get all attendance records)
 GET "/frontdesk/attendance/find/" (Get 1 attendance record by given id) Parameters: {id}
-
+get '/frontdesk/attendance/dashboard' (Get dashboard completed counts for year, month and day)
+get '/frontdesk/attendance/registered'(Get all registered (Waiting) list)
+get '/frontdesk/attendance/attending' (Get all currently attending list)
 
 
 *****************************
