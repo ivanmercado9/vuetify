@@ -83,6 +83,15 @@
         </v-card>
       </v-col>
       <v-col sm="3">
+        <!-- Actions toolbar -->
+        <v-card class="pa-0 mb-3" outlined tile>
+          <v-toolbar flat>
+            <v-spacer></v-spacer>
+            <v-btn small dark color="light-green">Finish</v-btn>
+            
+          </v-toolbar>
+        </v-card>
+        <!-- Forms and Letters card -->
         <v-card class="pa-3" outlined tile>
           <h3 class="subtitle-1 grey--text text--darken-3">Forms & Letters</h3>
           <v-divider class="mb-5"></v-divider>
@@ -97,30 +106,28 @@
                 clearable
                 clear-icon="mdi-close-circle-outline"
               ></v-text-field>
-              <v-checkbox v-model="caseSensitive"  hide-details label="Case sensitive search"></v-checkbox>
+              <!-- <v-checkbox v-model="caseSensitive" hide-details label="Case sensitive search"></v-checkbox> -->
             </v-sheet>
             <v-card-text>
-              <v-treeview v-model="selectedDocument" 
-              :items="items" 
-              :search="search" 
-              :filter="filter" 
-              :open.sync="open" 
-              open-on-click 
-              selected-color="blue darken-1"
-              selectable>
+              <v-treeview
+                v-model="selectedDocument"
+                :items="items"
+                :search="search"
+                :filter="filter"
+                :open.sync="open"
+                open-on-click
+                selected-color="blue darken-1"
+                selectable
+              >
                 <!-- <template v-slot:prepend="{ item }">
                   <v-icon
                     v-if="item.children"
                     v-text="`mdi-${item.id === 1 ? 'folder' : 'folder-network'}`"
                   ></v-icon>
-                </template> -->
+                </template>-->
                 <template v-slot:prepend="{ item, open }">
-                  <v-icon v-if="!item.file">
-                    {{ open ? 'mdi-folder-open' : 'mdi-folder' }}
-                  </v-icon>
-                  <v-icon v-else>
-                    {{ files[item.file] }}
-                  </v-icon>
+                  <v-icon v-if="!item.file">{{ open ? 'mdi-folder-open' : 'mdi-folder' }}</v-icon>
+                  <v-icon v-else>{{ files[item.file] }}</v-icon>
                 </template>
               </v-treeview>
               <v-btn block class="mt-5" color="blue darken-3" dark>PRINT SELECTED DOCUMENTS</v-btn>
@@ -129,6 +136,7 @@
         </v-card>
       </v-col>
       <v-col>
+        <!-- Last Visits card -->
         <v-card class="pa-3" outlined tile>
           <h3 class="subtitle-1 grey--text text--darken-3">Last Visits</h3>
           <v-divider class="mb-5"></v-divider>
@@ -176,83 +184,83 @@ export default {
     // Letters & Forms
     selectedDocument: [],
     files: {
-        html: 'mdi-language-html5',
-        js: 'mdi-nodejs',
-        json: 'mdi-json',
-        md: 'mdi-markdown',
-        pdf: 'mdi-file-pdf',
-        png: 'mdi-file-image',
-        txt: 'mdi-file-document-outline',
-        xls: 'mdi-file-excel',
-      },
+      html: "mdi-language-html5",
+      js: "mdi-nodejs",
+      json: "mdi-json",
+      md: "mdi-markdown",
+      pdf: "mdi-file-pdf",
+      png: "mdi-file-image",
+      txt: "mdi-file-document-outline",
+      xls: "mdi-file-excel"
+    },
     items: [
       {
-            id: 2,
-            name: "Cumplimiento",
-            children: [
-              {
-                id: 201,
-                name: "Document 1",
-                file: 'png',
-              },
-              {
-                id: 202,
-                name: "Document 2",
-                file: 'png',
-              },
-              {
-                id: 203,
-                name: "Document 3",
-                file: 'png',
-              },
-              {
-                id: 204,
-                name: "Document 4",
-                file: 'png',
-              },
-              {
-                id: 205,
-                name: "Document 5",
-                file: 'png',
-              }
-            ]
+        id: 2,
+        name: "Cumplimiento",
+        children: [
+          {
+            id: 201,
+            name: "Document 1",
+            file: "png"
           },
           {
-            id: 3,
-            name: "Contabilidad",
-            children: [
-              {
-                id: 301,
-                name: "Document 6",
-                file: 'png',
-              },
-              {
-                id: 302,
-                name: "Document 7",
-                file: 'png',
-              }
-            ]
+            id: 202,
+            name: "Document 2",
+            file: "png"
           },
           {
-            id: 4,
-            name: "Prestamos Personales",
-            children: [
-              {
-                id: 401,
-                name: "Document 8",
-                file: 'png',
-              },
-              {
-                id: 402,
-                name: "Document 9",
-                file: 'png',
-              },
-              {
-                id: 403,
-                name: "Document 10",
-                file: 'png',
-              }
-            ]
+            id: 203,
+            name: "Document 3",
+            file: "png"
+          },
+          {
+            id: 204,
+            name: "Document 4",
+            file: "png"
+          },
+          {
+            id: 205,
+            name: "Document 5",
+            file: "png"
+          }
+        ]
+      },
+      {
+        id: 3,
+        name: "Contabilidad",
+        children: [
+          {
+            id: 301,
+            name: "Document 6",
+            file: "png"
+          },
+          {
+            id: 302,
+            name: "Document 7",
+            file: "png"
+          }
+        ]
+      },
+      {
+        id: 4,
+        name: "Prestamos Personales",
+        children: [
+          {
+            id: 401,
+            name: "Document 8",
+            file: "png"
+          },
+          {
+            id: 402,
+            name: "Document 9",
+            file: "png"
+          },
+          {
+            id: 403,
+            name: "Document 10",
+            file: "png"
+          }
+        ]
       }
     ],
     open: [1, 2],
