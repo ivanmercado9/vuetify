@@ -51,6 +51,7 @@
         </template>
       </v-data-table>
     </template>
+    {{members}}
   </div>
 </template>
 
@@ -61,10 +62,10 @@ export default {
     // Table
     search: "",
     headers: [
-      { text: "Full Name", align: "left", value: "full_name" },
-      { text: "Member #", value: "member_number" },
+      { text: "Full Name", align: "left", value: "client_name" },
+      { text: "Member #", value: "client_number" },
       { text: "Service", value: "service" },
-      { text: "Created at", value: "created" },
+      { text: "Created at", value: "registered_time" },
       { text: "Start at", value: "start" },
       { text: "Finish at", value: "finished" },
       { text: "Added By", value: "added_by" },
@@ -100,5 +101,24 @@ export default {
       }
     ]
   }),
+  methods: {
+      getAttendance: function(){
+            var self = this;
+            // Esto hace un llamado a Web.php donde se encuentra nuestra ruta:
+            // Route::get('/getOrganizations', 'OrganizationController@getOrganizations')->name('getOrganizations');
+            axios.get('/frontdesk/attendance/get')
+            .then(function (response) {
+            // Entonces le decimos que muestra variable organizations sera igual a lo que responda este llamado 
+                self.members = response.data;
+            })
+            .catch(function (error) {
+            // Si ocurre un error imprime un mensaje en la consola
+                console.log(error);
+            });
+        },
+    },
+    created(){
+        this.getAttendance();
+    },
 };
 </script>
