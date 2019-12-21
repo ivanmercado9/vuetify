@@ -18,7 +18,7 @@ $factory->define(App\Attendance::class, function (Faker $faker) {
         //'finished_by_station'=>$faker->localIpv4(),
         'client_number'=>$faker->unique()->randomNumber(5),
         'client_name'=>$faker->name(),
-        'heard_about_us'=>$faker->randomElement(['Radio', 'TV', 'Newspaper', 'Billbord', 'Website']),
+        'heard_about_us_id'=>$faker->numberBetween(1,5),
         'heard_about_us_message'=>$faker->sentence(5),
         'branch_id'=>'1',
         //'referred_to'=>'1',
